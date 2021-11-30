@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>sandBOX</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <script src="script/sortlib.js"></script>
+    <script src="lib/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header class="table">
+        Библиотека алгоритмов сортировки <strong>JavaScript</strong>
+    </header>
+    <div class="table">
+        <table>
+            <tr>
+                <td>
+                    <p>Размер массива</p>
+                </td>
+                <td>
+                    <form action="#" autocomplete="off">
+                        <p><input class="paramArr" type="number" id="array" min="100" max="50000" value="500"></p>
+                </td>
+                <td>
+                    <p><button onclick="generateArray()">Сгенерировать массив</button></p>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <form action="#" autocomplete="off"></form>
+                    <p><button onclick="startSort()">Отсортировать массив</button></p>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <form action="#" autocomplete="off">
+            <p>
+                Убывающий<br>
+                <input class="arrBeforeSort" id="10" type="text" value="">
+            </p>
+            <p>
+                Смешанный<br>
+                <input class="arrBeforeSort" id="1" type="text" value="">
+            </p>
+        </form>
+    </div>
+    <div>
+        <form action="#" autocomplete="off">
+            <p>
+                Массивы после сортировки<br>
+                <input class="arrAfterSort" id="9" type="text" value="">
+                <input class="arrAfterSort" id="2" type="text" value="">
+            </p>
+        </form>
+    </div>
+
+    <div class="table">
+        <table>
+            <tr>
+                <p>Время, потраченное на сортировку, <strong>mc</strong></p>
+            </tr>
+            <tr>
+                <td>
+                    <p>Пузырьком<br></p>
+                </td>
+                <td>
+                    <p>Выбором</p>
+                </td>
+                <td>
+                    <p>Вставками</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        <input class="paramArr" id="4" type="text" value="">
+                        <input class="paramArr" id="3" type="text" value="">
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <input class="paramArr" id="5" type="text" value="">
+                        <input class="paramArr" id="6" type="text" value="">
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        <input class="paramArr" id="7" type="text" value="">
+                        <input class="paramArr" id="8" type="text" value="">
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="script/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+DirectoryIndex index.html
+
+ErrorDocument 404 /404.php
+<IfModule mod_php5.c>
