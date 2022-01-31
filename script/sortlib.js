@@ -1,85 +1,42 @@
-var testArr = [1, 5, 10, 7, 35, 96];
-
-function arraySortBubble(arrIn, dir = 0) {
-    let arr = arrIn;
-    let ind = 0;
-    if (dir == 0) {
-        while (ind < arr.length) {
-            for (let j = 0; j < arr.length; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    ind = 0;
-                } else {
-                    ind++;
-                }
-            }
-        }
-    } else {
-        while (ind < arr.length) {
-            for (let j = 0; j < arr.length; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    ind = 0;
-                } else {
-                    ind++;
-                }
+function arraySortBubble(arr) {
+    for (let j = arr.length - 1; j > 0; j--) {
+        for (let i = 0; i < j; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
             }
         }
     }
     return arr;
 }
 
-function arrSortSelection(arrIn, dir = 0) {
-    let arr = arrIn;
-    if (dir == 0) {
-        for (let i = 0; i < arr.length - 1; i++) {
-            let min = i;
-            for (let j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[min]) {
-                    min = j;
-                }
+function arrSortSelection(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let min = i;
+        for (let j = i; j < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
             }
-            [arr[i], arr[min]] = [arr[min], arr[i]];
         }
-    } else {
-        for (let i = 0; i < arr.length - 1; i++) {
-            let min = i;
-            for (let j = i + 1; j < arr.length; j++) {
-                if (arr[j] > arr[min]) {
-                    min = j;
-                }
-            }
-            [arr[i], arr[min]] = [arr[min], arr[i]];
+        if (min != i) {
+            let tmp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = tmp;
         }
     }
+    return arr;
 }
 
-function arrSortInsertion(arrIn, dir = 0) {
-    let arr = arrIn;
-    if (dir == 0) {
-        for (let i = 1, l = arr.length; i < l; i++) {
-            const current = arr[i];
-            let j = i;
-            while (j > 0 && arr[j - 1] > current) {
-                arr[j] = arr[j - 1];
-                j--;
-            }
-            arr[j] = current;
+function arrSortInsertion(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let act = arr[i],
+            j = i - 1;
+        while (j >= 0 && arr[j] > act) {
+            arr[j + 1] = arr[j];
+            j--;
         }
-    } else {
-        for (let i = 1, l = arr.length; i < l; i++) {
-            const current = arr[i];
-            let j = i;
-            while (j > 0 && arr[j - 1] < current) {
-                arr[j] = arr[j - 1];
-                j--;
-            }
-            arr[j] = current;
-        }
+        arr[j + 1] = act;
     }
     return arr;
 }
